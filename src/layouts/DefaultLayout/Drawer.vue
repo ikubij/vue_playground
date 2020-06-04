@@ -10,20 +10,15 @@
     v-bind="$attrs"
     v-on="$listeners"
   >
-    <v-list
-      color="white"
-      shaped
-    >
+    <v-list color="white" shaped>
       <v-list-item>
-
         <v-img
-            src="https://cdn.vuetifyjs.com/images/parallax/material2.jpg"
-            gradient="to top right, rgba(100,115,201,.33), rgba(25,32,72,.7)"
-            max-width="128"
-            width="100%"
-            class="mb-2"
+          src="https://cdn.vuetifyjs.com/images/parallax/material2.jpg"
+          gradient="to top right, rgba(100,115,201,.33), rgba(25,32,72,.7)"
+          max-width="128"
+          width="100%"
+          class="mb-2"
         ></v-img>
-
       </v-list-item>
 
       <v-divider></v-divider>
@@ -44,13 +39,13 @@
 
 <script>
 export default {
-  name: 'Drawer',
+  name: "Drawer",
 
   props: {
     items: {
       type: Array,
-      default: () => ([]),
-    },
-  },
+      default: () => []
+    }
+  }
 };
 </script>

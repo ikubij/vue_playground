@@ -1,17 +1,20 @@
 <template>
   <div class="app">
-     <v-fade-transition mode="out-in">
       <router-view />
-    </v-fade-transition>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App',
+  name: "App",
 
   data: () => ({
     //
-  }),
+  })
 };
 </script>
+
+<style lang="scss">
+  @import url("https://cdn.jsdelivr.net/npm/animate.css@3.5.1");
+
+</style>

@@ -8,7 +8,6 @@
       :elevation="elevation"
       height="80"
     >
-
       <v-img
         src="https://cdn.vuetifyjs.com/images/parallax/material2.jpg"
         gradient="to top right, rgba(100,115,201,.33), rgba(25,32,72,.7)"
@@ -21,10 +20,7 @@
       <v-spacer />
 
       <div>
-        <v-tabs
-          class="d-none d-md-flex"
-          optional
-        >
+        <v-tabs class="d-none d-md-flex" optional>
           <v-tab
             v-for="(item, i) in items"
             :key="i"
@@ -40,26 +36,19 @@
         </v-tabs>
       </div>
 
-      <v-app-bar-nav-icon
-        class="d-md-none"
-        @click="drawer = !drawer"
-      />
+      <v-app-bar-nav-icon class="d-md-none" @click="drawer = !drawer" />
     </v-app-bar>
 
-    <drawer
-      v-model="drawer"
-      :items="items"
-    />
+    <drawer v-model="drawer" :items="items" />
   </div>
-
 </template>
 
 <script>
 export default {
-  name: 'AppBar',
+  name: "AppBar",
 
   components: {
-    Drawer: () => import('./Drawer.vue'),
+    Drawer: () => import("./Drawer.vue")
   },
 
   data: () => ({
@@ -68,18 +57,18 @@ export default {
     drawer: null,
     items: [
       {
-        name: 'Home',
-        link: '/',
+        name: "Home",
+        link: "/"
       },
       {
-        name: 'About',
-        link: '/about',
+        name: "About",
+        link: "/about"
       },
       {
-        name: 'Projects',
-        link: '/projects',
-      },
-    ],
+        name: "Projects",
+        link: "/projects"
+      }
+    ]
   }),
 
   methods: {
@@ -91,20 +80,20 @@ export default {
       } else if (offset < 50) {
         this.elevation = 0;
       }
-    },
-  },
+    }
+  }
 };
 </script>
 
 <style lang="sass">
-  #home-app-bar
-    border-bottom: 1px solid #ccc !important
+#home-app-bar
+  border-bottom: 1px solid #ccc !important
 
-    .v-tabs-slider
-      max-width: 24px
-      margin: 0 auto
+  .v-tabs-slider
+    max-width: 24px
+    margin: 0 auto
 
-    .v-tab
-      &::before
-        display: none
+  .v-tab
+    &::before
+      display: none
 </style>

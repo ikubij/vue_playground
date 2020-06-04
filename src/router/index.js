@@ -1,20 +1,18 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
-import { publicRoute, protectedRoute } from './routes';
-import Auth from '../auth/auth';
+import Vue from "vue";
+import VueRouter from "vue-router";
+import { publicRoute, protectedRoute } from "./routes";
+import Auth from "../auth/auth";
 
 const routes = publicRoute.concat(protectedRoute);
 
 Vue.use(VueRouter);
 Vue.use(Auth);
 
-
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   // base: process.env.BASE_URL,
-  routes,
+  routes
 });
-
 
 // router.beforeEach((to, from, next) => {
 //   let role = localStorage.getItem("role");
@@ -63,6 +61,5 @@ const router = new VueRouter({
 //       : "Workflow | Home";
 //   next();
 // });
-
 
 export default router;

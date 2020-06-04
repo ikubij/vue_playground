@@ -1,33 +1,53 @@
 // import { AuthLayout, DefaultLayout, AdminLayout } from '@/components/layouts';
-import { DefaultLayout } from '@/layouts/DefaultLayout';
+import { DefaultLayout } from "@/layouts";
 // // import { AuthLayout } from "@/components/layouts";
 
 export const publicRoute = [
   {
-    path: '*',
-    component: () => import('@/views/errors/NotFound.vue'),
+    path: "*",
+    component: () => import("@/views/errors/NotFound.vue")
   },
 
   /* Pages with the default route */
 
   {
-    path: '/',
+    path: "/",
     component: DefaultLayout,
     meta: {
-      title: 'Home',
-      guest: true,
-    },
-    redirect: '/',
+      title: "Home",
+      guest: true
+    },  
+    redirect: "/",
     hidden: true,
     children: [
       {
-        path: '/',
-        name: 'Home',
-        meta: { title: 'Home' },
-        component: () => import('@/views/Home.vue'),
-      },
-    ],
+        path: "/",
+        name: "Home",
+        meta: { title: "Home" },
+        component: () => import("@/views/Home.vue")
+      }
+    ]
   },
+
+  {
+    path: "/about",
+    component: DefaultLayout,
+    meta: {
+      title: "About",
+      guest: true
+    },  
+    redirect: "/about",
+    hidden: true,
+    children: [
+      {
+        path: "/about",
+        name: "About",
+        meta: { title: "About" },
+        component: () => import("@/views/About.vue")
+      }
+    ]
+  }
+  
 
   /* Pages with the auth route */
 
@@ -62,23 +82,21 @@ export const publicRoute = [
   //         },
   //     ],
   // },
-
-
 ];
 
 export const protectedRoute = [
-//   {
-//     path: "/admin",
-//     component: AdminLayout,
-//     meta: { title: "Administration", forAuth: true },
-//     redirect: "/admin",
-//     children: [
-//       {
-//         path: "/admin",
-//         name: "Admin Home",
-//         meta: { title: "Administration" },
-//         component: () => import("@/views/admin/Dashboard.vue"),
-//       },
-//     ],
-//   },
+  //   {
+  //     path: "/admin",
+  //     component: AdminLayout,
+  //     meta: { title: "Administration", forAuth: true },
+  //     redirect: "/admin",
+  //     children: [
+  //       {
+  //         path: "/admin",
+  //         name: "Admin Home",
+  //         meta: { title: "Administration" },
+  //         component: () => import("@/views/admin/Dashboard.vue"),
+  //       },
+  //     ],
+  //   },
 ];
