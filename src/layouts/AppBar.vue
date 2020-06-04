@@ -98,7 +98,7 @@ export default {
 
 <style lang="sass">
   #home-app-bar
-    border-bottom: 1px solid #ccc !important;
+    border-bottom: 1px solid #ccc !important
 
     .v-tabs-slider
       max-width: 24px

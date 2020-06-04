@@ -1,12 +1,12 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import { publicRoute, protectedRoute } from './routes';
-// import Auth from '../auth/auth';
+import Auth from '../auth/auth';
 
 const routes = publicRoute.concat(protectedRoute);
 
 Vue.use(VueRouter);
-// Vue.use(Auth);
+Vue.use(Auth);
 
 
 const router = new VueRouter({
