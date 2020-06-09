@@ -4,14 +4,14 @@
 
     <v-content style="margin-top:80px">
       <v-container fluid>
-          <transition
-            name="custom-classes-transition"
-            enter-active-class="animated tada"
-            leave-active-class="animated bounceOutRight"
-            mode="out-in"
-          >
+        <transition
+          name="custom-classes-transition"
+          enter-active-class="animated tada"
+          leave-active-class="animated bounceOutRight"
+          mode="out-in"
+        >
           <router-view />
-          </transition>
+        </transition>
       </v-container>
     </v-content>
 

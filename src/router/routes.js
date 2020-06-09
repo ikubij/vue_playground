@@ -16,7 +16,7 @@ export const publicRoute = [
     meta: {
       title: "Home",
       guest: true
-    },  
+    },
     redirect: "/",
     hidden: true,
     children: [
@@ -35,7 +35,7 @@ export const publicRoute = [
     meta: {
       title: "About",
       guest: true
-    },  
+    },
     redirect: "/about",
     hidden: true,
     children: [
@@ -47,7 +47,6 @@ export const publicRoute = [
       }
     ]
   }
-  
 
   /* Pages with the auth route */
 
