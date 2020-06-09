@@ -4,12 +4,14 @@ import App from "./App";
 import router from "./router";
 import store from "./store";
 import vuetify from "./plugins/vuetify";
+require("dotenv").config();
 
 Vue.config.productionTip = false;
 
 Vue.prototype.$http = Axios;
 // Axios.defaults.baseURL = process.env.API_PATH;
-Axios.defaults.baseURL = (process.env.API_PATH !== 'production') ? 'http://localhost:8000/' : '';
+Axios.defaults.baseURL =
+  process.env.API_PATH !== "production" ? "http://localhost:8000/" : "";
 
 const token = localStorage.getItem("token");
 if (token) {
