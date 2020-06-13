@@ -22,24 +22,71 @@
       <div>
         <v-tabs class="d-none d-md-flex" optional>
           <v-tab
-            v-for="(item, i) in items"
-            :key="i"
-            :to="item.link"
             :ripple="false"
             active-class="text--primary"
             class="font-weight-bold"
             min-width="96"
             text
+            to="/"
           >
-            {{ item.name }}
+            Home
           </v-tab>
+
+          <v-tab
+            :ripple="false"
+            active-class="text--primary"
+            class="font-weight-bold"
+            min-width="96"
+            text
+            to="/about"
+          >
+            About
+          </v-tab>
+
+          <v-menu
+            transition="slide-y-transition"
+            bottom
+            offset-y
+            rounded="b-xl"
+          >
+            <template v-slot:activator="{ on, attrs }">
+              <v-tab
+                :ripple="false"
+                active-class="text--primary"
+                class="font-weight-bold"
+                min-width="96"
+                text
+                v-bind="attrs"
+                v-on="on"
+              >
+                Playground  
+              </v-tab>
+            </template>
+            <v-list>
+
+              <v-list-item
+                @click="goTo('/chatbox')"
+              >
+                <v-list-item-title>Chatbox</v-list-item-title>
+              </v-list-item>
+
+              <v-list-item
+                @click="goTo('/clippath')"
+              >
+                <v-list-item-title>ClipPath</v-list-item-title>
+              </v-list-item>
+
+            </v-list>
+          </v-menu>
+
         </v-tabs>
+
       </div>
 
       <v-app-bar-nav-icon class="d-md-none" @click="drawer = !drawer" />
     </v-app-bar>
 
-    <drawer v-model="drawer" :items="items" />
+    <drawer v-model="drawer"/>
   </div>
 </template>
 
@@ -55,20 +102,6 @@ export default {
     isScrolling: false,
     elevation: 0,
     drawer: null,
-    items: [
-      {
-        name: "Home",
-        link: "/"
-      },
-      {
-        name: "About",
-        link: "/about"
-      },
-      {
-        name: "Projects",
-        link: "/projects"
-      }
-    ]
   }),
 
   methods: {
@@ -80,6 +113,9 @@ export default {
       } else if (offset < 50) {
         this.elevation = 0;
       }
+    },
+    goTo(route){
+      this.$router.push(route)
     }
   }
 };

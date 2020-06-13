@@ -46,6 +46,31 @@ export const publicRoute = [
         component: () => import("@/views/About.vue")
       }
     ]
+  },
+
+  {
+    path: "/playground",
+    component: DefaultLayout,
+    meta: {
+      title: "Playground",
+      guest: true
+    },
+    redirect: "/chatbox",
+    hidden: true,
+    children: [
+      {
+        path: "/chatbox",
+        name: "ChatBox",
+        meta: { title: "ChatBox" },
+        component: () => import("@/views/Pusher/ChatBox.vue")
+      },
+      {
+        path: "/clippath",
+        name: "ClipPath",
+        meta: { title: "ClipPath" },
+        component: () => import("@/views/SassPractice/ClipPath.vue")
+      }
+    ]
   }
 
   /* Pages with the auth route */

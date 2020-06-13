@@ -24,15 +24,50 @@
       <v-divider></v-divider>
 
       <v-list-item
-        v-for="(item, i) in items"
-        :key="i"
-        :to="item.link"
+        to="/"
         color="primary"
       >
         <v-list-item-content>
-          <v-list-item-title v-text="item.name" />
+          Home
         </v-list-item-content>
       </v-list-item>
+
+      <v-list-item
+        to="/about"
+        color="primary"
+      >
+        <v-list-item-content>
+          About
+        </v-list-item-content>
+      </v-list-item>
+
+      <v-menu
+        transition="slide-y-transition"
+        bottom
+        offset-x
+      >
+        <template v-slot:activator="{ on, attrs }">
+          <v-list-item
+            color="primary"
+            v-bind="attrs"
+            v-on="on"
+          >
+            <v-list-item-content>
+              Playground
+            </v-list-item-content>
+          </v-list-item>
+        </template>
+        <v-list>
+
+          <v-list-item
+            @click="goTo('/chatbox')"
+          >
+            <v-list-item-title>Chatbox</v-list-item-title>
+          </v-list-item>
+
+        </v-list>
+      </v-menu>
+
     </v-list>
   </v-navigation-drawer>
 </template>
@@ -41,10 +76,9 @@
 export default {
   name: "Drawer",
 
-  props: {
-    items: {
-      type: Array,
-      default: () => []
+  methods:{
+    goTo(route){
+      this.$router.push(route)
     }
   }
 };
