@@ -27,14 +27,12 @@ export default {
       cluster: process.env.VUE_APP_PUSHER_APP_CLUSTER
     });
 
-    var channel = pusher.subscribe('home');
-    channel.bind('NewMessage', function(data) {
+    var channel = pusher.subscribe("home");
+    channel.bind("NewMessage", function(data) {
       // app.messages.push(JSON.stringify(data));
       console.log(data);
       alert(data.message);
     });
-
-    
 
     // this.subscribe()
 

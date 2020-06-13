@@ -35,11 +35,7 @@
               {{ item.name }}
             </span>
 
-            <v-menu
-              transition="slide-y-transition"
-              bottom
-              v-else
-            >
+            <v-menu transition="slide-y-transition" bottom v-else>
               <template v-slot:activator="{ on, attrs }">
                 <v-btn
                   class="purple"
@@ -48,22 +44,14 @@
                   v-bind="attrs"
                   v-on="on"
                 >
-                  
                 </v-btn>
               </template>
               <v-list>
-                <v-list-item
-                  v-for="(item, i) in items"
-                  :key="i"
-                  @click="echo"
-                >
+                <v-list-item v-for="(item, i) in items" :key="i" @click="echo">
                   <v-list-item-title>{{ item.title }}</v-list-item-title>
                 </v-list-item>
               </v-list>
             </v-menu>
-
-
-
           </v-tab>
         </v-tabs>
       </div>
@@ -104,11 +92,11 @@ export default {
         name: "Playground",
         // link: "/",
         children: [
-          { title: 'Chatbox', link: 'chatbox' },
-          { title: 'Click Me', link: 'chatbox' },
-          { title: 'Click Me', link: 'chatbox' },
-          { title: 'Click Me 2', link: 'chatbox' },
-        ],
+          { title: "Chatbox", link: "chatbox" },
+          { title: "Click Me", link: "chatbox" },
+          { title: "Click Me", link: "chatbox" },
+          { title: "Click Me 2", link: "chatbox" }
+        ]
       }
     ]
   }),
@@ -123,8 +111,8 @@ export default {
         this.elevation = 0;
       }
     },
-    echo(){
-      alert('dd')
+    echo() {
+      alert("dd");
     }
   }
 };

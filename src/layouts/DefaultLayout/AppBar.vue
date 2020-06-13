@@ -59,34 +59,26 @@
                 v-bind="attrs"
                 v-on="on"
               >
-                Playground  
+                Playground
               </v-tab>
             </template>
             <v-list>
-
-              <v-list-item
-                @click="goTo('/chatbox')"
-              >
+              <v-list-item @click="goTo('/chatbox')">
                 <v-list-item-title>Chatbox</v-list-item-title>
               </v-list-item>
 
-              <v-list-item
-                @click="goTo('/clippath')"
-              >
+              <v-list-item @click="goTo('/clippath')">
                 <v-list-item-title>ClipPath</v-list-item-title>
               </v-list-item>
-
             </v-list>
           </v-menu>
-
         </v-tabs>
-
       </div>
 
       <v-app-bar-nav-icon class="d-md-none" @click="drawer = !drawer" />
     </v-app-bar>
 
-    <drawer v-model="drawer"/>
+    <drawer v-model="drawer" />
   </div>
 </template>
 
@@ -101,7 +93,7 @@ export default {
   data: () => ({
     isScrolling: false,
     elevation: 0,
-    drawer: null,
+    drawer: null
   }),
 
   methods: {
@@ -114,8 +106,8 @@ export default {
         this.elevation = 0;
       }
     },
-    goTo(route){
-      this.$router.push(route)
+    goTo(route) {
+      this.$router.push(route);
     }
   }
 };
